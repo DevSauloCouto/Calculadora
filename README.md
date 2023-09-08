@@ -1,2 +1,2 @@
 # Calculadora
- Meu primeiro projeto de programação. Uma calculadora simples, porém ainda está faltando implementar a funcionalidade dos números decimais.
+ Meu primeiro projeto de programação. Uma calculadora simples. Ainda pretendo trabalhar com uma estilização melhor.
