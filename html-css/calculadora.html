@@ -15,25 +15,25 @@
     <main>
         <div class="calc">
             <p id="entrada"></p><br>
-            <button id="sup" class="percent" onclick="operation('porcentagem')">%</button>
+            <button id="sup" class="percent" onclick="insertOperador(4)">%</button>
             <button id="sup" class="backspace" onclick="back()">CE</button>
             <button id="sup" class="clear" onclick=clean()>C</button>
-            <button id="lateral" class="soma" onclick="operation('soma')">+</button><br>
-            <button id="cima" class="sete" onclick="number('sete')">7</button>
-            <button id="cima" class="oito" onclick="number('oito')">8</button>
-            <button id="cima" class="nove" onclick="number('nove')">9</button>
-            <button id="lateral" class="subtracao" onclick="operation('subtracao')">-</button><br>
-            <button id="meio" class="quatro" onclick="number('quatro')">4</button>
-            <button id="meio" class="cinco" onclick="number('cinco')">5</button>
-            <button id="meio" class="seis" onclick="number('seis')">6</button>
-            <button id="lateral" class="mult" onclick="operation('multiplicacao')">x</button><br>
-            <button id="baixo" class="um" value="1" onclick="number('um')">1</button>
-            <button id="baixo" class="dois" onclick="number('dois')">2</button>
-            <button id="baixo" class="tres" onclick="number('tres')">3</button>
-            <button id="lateral" class="divisao" onclick="operation('divisao')">/</button><br>
-            <button id="neutro" class="zero" value="0" onclick="number('zero')">0</button>
+            <button id="lateral" class="soma" onclick="insertOperador(0)">+</button><br>
+            <button id="cima" class="sete" onclick="insertNumber(7)">7</button>
+            <button id="cima" class="oito" onclick="insertNumber(8)">8</button>
+            <button id="cima" class="nove" onclick="insertNumber(9)">9</button>
+            <button id="lateral" class="subtracao" onclick="insertOperador(1)">-</button><br>
+            <button id="meio" class="quatro" onclick="insertNumber(4)">4</button>
+            <button id="meio" class="cinco" onclick="insertNumber(5)">5</button>
+            <button id="meio" class="seis" onclick="insertNumber(6)">6</button>
+            <button id="lateral" class="mult" onclick="insertOperador(2)">*</button><br>
+            <button id="baixo" class="um" value="1" onclick="insertNumber(1)">1</button>
+            <button id="baixo" class="dois" onclick="insertNumber(2)">2</button>
+            <button id="baixo" class="tres" onclick="insertNumber(3)">3</button>
+            <button id="lateral" class="divisao" onclick="insertOperador(3)">/</button><br>
+            <button id="neutro" class="zero" value="0" onclick="insertNumber(0)">0</button>
             <button id="resultado" onclick=resultado()>=</button> 
-            <button id="lateral" class="ponto" onclick="number('ponto')">,</button>
+            <button id="lateral" class="ponto" onclick="insertNumber(10)">.</button>
         </div>
     </main>
     <script src="../script/scriptCalculadora.js"></script>
