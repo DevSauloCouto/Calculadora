@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styleCalc.css">
+    <link rel="shortcut icon" href="../img/calculadora.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1 class="titulo">CALCULADORA</h1>
+        </div>    
+    </header>
+    <main>
+        <div class="calc">
+            <p id="entrada"></p><br>
+            <button id="sup" class="percent" onclick="operation('porcentagem')">%</button>
+            <button id="sup" class="backspace" onclick="back()">CE</button>
+            <button id="sup" class="clear" onclick=clean()>C</button>
+            <button id="lateral" class="soma" onclick="operation('soma')">+</button><br>
+            <button id="cima" class="sete" onclick="number('sete')">7</button>
+            <button id="cima" class="oito" onclick="number('oito')">8</button>
+            <button id="cima" class="nove" onclick="number('nove')">9</button>
+            <button id="lateral" class="subtracao" onclick="operation('subtracao')">-</button><br>
+            <button id="meio" class="quatro" onclick="number('quatro')">4</button>
+            <button id="meio" class="cinco" onclick="number('cinco')">5</button>
+            <button id="meio" class="seis" onclick="number('seis')">6</button>
+            <button id="lateral" class="mult" onclick="operation('multiplicacao')">x</button><br>
+            <button id="baixo" class="um" value="1" onclick="number('um')">1</button>
+            <button id="baixo" class="dois" onclick="number('dois')">2</button>
+            <button id="baixo" class="tres" onclick="number('tres')">3</button>
+            <button id="lateral" class="divisao" onclick="operation('divisao')">/</button><br>
+            <button id="neutro" class="zero" value="0" onclick="number('zero')">0</button>
+            <button id="resultado" onclick=resultado()>=</button> 
+            <button id="lateral" class="ponto" onclick="number('ponto')">,</button>
+        </div>
+    </main>
+    <script src="../script/scriptCalculadora.js"></script>
+</body>
+</html>

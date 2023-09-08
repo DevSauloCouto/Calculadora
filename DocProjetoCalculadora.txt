@@ -1,0 +1,250 @@
+PALETA DE CORES
+
+MediumPurple (147,112,219);
+Indigo (75,0,130);
+
+
+FONTES
+
+Arial, Helvetica, sans-serif;
+
+=====CÓDIGO HTML=====
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styleCalc.css">
+    <link rel="shortcut icon" href="../img/calculadora.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1 class="titulo">CALCULADORA</h1>
+        </div>    
+    </header>
+    <main>
+        <div class="calc">
+            <p id="entrada"></p><br>
+            <button id="sup" class="percent" onclick="operation('porcentagem')">%</button>
+            <button id="sup">CE</button>
+            <button id="sup" class="clear" onclick=reset()>C</button>
+            <button id="lateral" class="soma" onclick="operation('soma')">+</button><br>
+            <button id="cima" class="sete" onclick="number('sete')">7</button>
+            <button id="cima" class="oito" onclick="number('oito')">8</button>
+            <button id="cima" class="nove" onclick="number('nove')">9</button>
+            <button id="lateral" class="subtracao" onclick="operation('subtracao')">-</button><br>
+            <button id="meio" class="quatro" onclick="number('quatro')">4</button>
+            <button id="meio" class="cinco" onclick="number('cinco')">5</button>
+            <button id="meio" class="seis" onclick="number('seis')">6</button>
+            <button id="lateral" class="mult" onclick="operation('multiplicacao')">x</button><br>
+            <button id="baixo" class="um" value="1" onclick="number('um')">1</button>
+            <button id="baixo" class="dois" onclick="number('dois')">2</button>
+            <button id="baixo" class="tres" onclick="number('tres')">3</button>
+            <button id="lateral" class="divisao" onclick="operation('divisao')">/</button><br>
+            <button id="neutro" class="zero" value="0" onclick="number('zero')">0</button>
+            <button id="resultado" onclick=resultado()>=</button> 
+            <button id="lateral">,</button>
+        </div>
+    </main>
+    <script src="../script/scriptCalculadora.js"></script>
+</body>
+</html>
+
+
+=====CÓDIGO JAVASCRIPT=====
+
+let paragrafo = document.getElementById("entrada");
+let buttons = {
+    zero: document.getElementsByClassName("zero").innerHTML = '0',
+    um: document.getElementsByClassName("um").innerHTML = '1',
+    dois: document.getElementsByClassName("dois").innerHTML = '2',
+    tres: document.getElementsByClassName("tres").innerHTML = '3',
+    quatro: document.getElementsByClassName("quatro").innerHTML = '4',
+    cinco: document.getElementsByClassName("cinco").innerHTML = '5',
+    seis: document.getElementsByClassName("seis").innerHTML = '6', 
+    sete: document.getElementsByClassName("sete").innerHTML = '7',
+    oito: document.getElementsByClassName("oito").innerHTML = '8',
+    nove: document.getElementsByClassName("nove").innerHTML = '9'
+};
+let operators = {
+    soma: document.getElementsByClassName("soma").innerHTML = ' + ',
+    subtracao: document.getElementsByClassName("subtracao").innerHTML = ' - ',
+    multiplicacao: document.getElementsByClassName("mult").innerHTML = ' * ',
+    divisao: document.getElementsByClassName("divisao").innerHTML = ' / ',
+    porcentagem: document.getElementsByClassName("percent").innerHTML = ' % '
+}
+
+//função que insere e trata os números selecionados pelo usuário..
+function number(prop){
+    paragrafo.innerHTML += buttons[prop];
+    value1 = paragrafo.innerHTML;
+    console.log(value1.length);
+
+    numeros = {
+        num1: parseInt(value1),
+        num2: ''
+    };
+
+    if(value1.length == 5){
+        numeros.num2 = parseInt(value1.substring(4));
+    } else if (value1.length == 6){
+        numeros.num2 = parseInt(value1.substring(4)) || parseInt(value1.substring(5));
+    } else if (value1.length == 7){
+        numeros.num2 = parseInt(value1.substring(4)) || parseInt(value1.substring(5));
+    } else if (value1.length == 8){
+        numeros.num2 = parseInt(value1.substring(4)) || parseInt(value1.substring(5)) || parseInt(value1.substring(6));
+    } else if (value1.length == 9){
+        numeros.num2 = parseInt(value1.substring(4)) || parseInt(value1.substring(5)) || parseInt(value1.substring(6)) || parseInt(value1.substring(7));
+    } else if (value1.length == 10){
+        numeros.num2 = parseInt(value1.substring(4)) || parseInt(value1.substring(5)) || parseInt(value1.substring(6)) || parseInt(value1.substring(7)) || parseInt(value1.substring(8));
+    } else if(value1.length == 11){
+        numeros.num2 = parseInt(value1.substring(4)) || parseInt(value1.substring(5)) || parseInt(value1.substring(6)) || parseInt(value1.substring(7)) || parseInt(value1.substring(8)) || parseInt(value1.substring(9));
+    }
+    console.log(numeros);
+}
+
+//função que apaga os números inseridos pelo usuário..
+function clean(){
+    paragrafo.innerHTML = "";
+}
+
+//função que deleta um número ou sinal inserido pelo usuário..
+function back(){
+    let backspace = paragrafo.innerHTML;
+    paragrafo.innerHTML = backspace.substring(0, backspace.length - 1);
+}
+
+//função que insere um sinal de operação selecionado pelo usuário..
+function operation(prop){
+    paragrafo.innerHTML += operators[prop];
+    operador = {
+        sinal: operators[prop]
+    };
+    console.log(operador);
+    return true;
+}
+
+//função que apresenta o resultado da operação..
+function resultado(){
+    if(operador.sinal == " + "){
+        paragrafo.innerHTML = numeros.num1 + numeros.num2;
+    } else if(operador.sinal == " - "){
+        paragrafo.innerHTML = numeros.num1 - numeros.num2;
+    } else if(operador.sinal == " * "){
+        paragrafo.innerHTML = numeros.num1 * numeros.num2;
+    } else if(operador.sinal == "  /"){
+        paragrafo.innerHTML = numeros.num1 / numeros.num2;
+    } else if(operador.sinal == " % "){
+        paragrafo.innerHTML = (numeros.num1 / 100) * numeros.num2;
+    }
+}
+
+
+=====CÓDIGO CSS=====
+
+body {
+    background-color: rgb(147,112,219);
+}
+header {
+    background-color: rgb(147,112,219);
+    margin-top: -1%;
+    margin-left: -1%;
+    margin-right: -0.6%;
+    padding: 5px;
+    border: solid 10px rgb(147,112,219);
+}
+
+div.header {
+    text-align: center;
+    border: solid 1px black;
+    width: 40%;
+    background-color: #000000;
+    color: #FFFFFF;
+    margin-left: 30%;
+    border-radius: 15px;
+}
+
+h1.titulo {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+
+div.calc {
+    border: solid 2px rgb(147,112,219);
+    border-radius: 15px;
+    background-color: #000000;
+    margin-top: 2%;
+    margin-left: 35%;
+    width: 30%;
+    text-align: center;
+}
+
+p#entrada {
+    margin-top: 5%;
+    margin-left: 8%;
+    margin-bottom: 1%;
+    width: 80%;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #000000;
+    border: solid 3px rgb(147,112,219);
+    color: #FFFFFF;
+    font-size: 30px; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
+}
+
+button#sup {
+    display: inline;
+    width: 20%;
+    font-size: 30px;
+
+}
+button#cima {
+    display: inline;
+    width: 20%;
+    font-size: 30px;
+}
+button#meio {
+    display: inline;
+    width: 20%;
+    font-size: 30px;
+}
+button#baixo {
+    display: inline;
+    width: 20%;
+    font-size: 30px;
+}
+button#neutro {
+    display: inline;
+    width: 41%;
+    font-size: 30px;
+    margin-bottom: 5%;
+}
+button#lateral {
+    display: inline;
+    width: 20%;
+    font-size: 30px;
+}
+button {
+    margin-top: 0.5%;
+    border-radius: 10px;
+    border: solid 1px rgb(147,112,219);
+    height: 60px;
+    background-color: rgb(147,112,219);
+    cursor: pointer;
+}
+button#resultado {
+    display: inline;
+    width: 20%;
+
+    font-size: 30px;
+}
+button:hover {
+    background-color: rgb(75,0,130);
+}
