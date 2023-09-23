@@ -1,2 +1,2 @@
 # Calculadora
- Meu primeiro projeto de programação. Uma calculadora simples. Ainda pretendo trabalhar com uma estilização melhor.
+ Meu primeiro projeto de programação. Depois de estudar HTML, CSS, JavaScript Básico e conceitos como manipulação do DOM, decidi criar uma calculadora simples, capaz de realizar operações comuns. Ainda estudando alguns conceitos de CSS para aperfeiçoar a estilização dos conteúdos e está melhorando o design desse projeto. Pretendo implementar outros tipos de operações matemáticas como: conversão de bases numéricas, equações, raiz quadrada, etc. 
