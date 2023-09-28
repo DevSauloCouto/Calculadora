@@ -30,11 +30,23 @@ function back(){
     paragrafo.innerHTML = backspace.substring(0, backspace.length - 1);
 }
 
-
-
-
-
-
-
+//função que adiciona um caracter de operador no campo de paragrafo com atalho do teclado;
+const keyOperator = (event) => {
+    if(event.key == '+'){
+        paragrafo.innerHTML = operadores[0];
+    } 
+    if(event.key == '-'){
+        paragrafo.innerHTML = operadores[1];
+    }
+    if(event.key == '*'){
+        paragrafo.innerHTML = operadores[2];
+    }
+    if(event.key == '/'){
+        paragrafo.innerHTML = operadores[3];
+    }
+    if(event.key == '%'){
+        paragrafo.innerHTML = operadores[4];
+    }
+}
 
 
