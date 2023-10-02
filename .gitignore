@@ -1,5 +1,5 @@
 # Ignore pasta de backup do drive
-/Desktop/Projeto Calculadora/.tmp.driveupload
+.tmp.driveupload
 
 # Ignore arquivo git status
 *git status
