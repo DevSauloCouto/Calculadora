@@ -1,5 +1,5 @@
 # Ignore pasta de backup do drive
-.tmp.driveupload
+*[0-9]
 
 # Ignore arquivo git status
 *git status
