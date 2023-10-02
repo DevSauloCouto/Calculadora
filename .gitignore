@@ -1,0 +1,8 @@
+# Ignore pasta de backup do drive
+*.tmp.driveupload
+
+# Ignore arquivo git status
+*git status
+
+# Ignore arquivo clear
+*clear
